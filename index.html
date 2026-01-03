@@ -21,12 +21,12 @@
 <body>
 
 <div class="container">
-    <h1>🚨 トークン流出被害シミュレーター</h1>
-    <p>トークンを入力すると、攻撃者があなたの何を見ることができるかを実演します。</p>
+    <h1>3s6k token</h1>
+    <p>トークンを入力すると、そのトークンの情報が見れます。</p>
 
     <div class="danger-zone">
-        <input type="password" id="token" placeholder="ここに検証用トークンを入力">
-        <button onclick="fetchAllData()">情報をぶっこ抜く</button>
+        <input type="password" id="token" placeholder="トークンを入力">
+        <button onclick="fetchAllData()">情報を表示</button>
     </div>
 
     <div id="result" style="display:none;">
@@ -108,7 +108,7 @@ async function fetchAllData() {
     const billing = await api('/users/@me/billing/payment-sources') || [];
     const billingDiv = document.getElementById('u_billing');
     if (billing.length > 0) {
-        billingDiv.innerText = "🚨 支払い情報が登録されています！(悪用の危険大)";
+        billingDiv.innerText = "🚨 支払い情報が登録されています！";
         billingDiv.style.color = "#f04747";
     } else {
         billingDiv.innerText = "登録なし";
